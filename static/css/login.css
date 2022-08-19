@@ -1,0 +1,40 @@
+.btn_login{
+background-color: #010103;
+font-size: 1.8rem;
+color: #fff;
+padding: 5px;
+width: 100%;
+}
+
+h1{
+    margin-bottom: 20px;
+}
+
+.login_form{
+    width: 400px;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login_form input{
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    padding: 2px;
+    background-color: #F8F8F8;
+    border-bottom: 1px solid #010103;
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+}
+
+.login_form label{
+    font-size: 1.4rem;
+    
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
