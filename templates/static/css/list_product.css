@@ -1,0 +1,97 @@
+.teste {
+    background-color: black;
+    color: aliceblue;
+}
+
+.content_list {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: #F8F8F8;
+    width: 100%;
+    top: 80px;
+    min-height: 765px;
+
+}
+
+.list {
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    background-color: #F8F8F8;
+}
+
+.form_pesquisa {
+    font-size: 1.8rem;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    min-width: 380px;
+
+}
+
+.form_pesquisa input {
+    font-size: 1.8rem;
+    width: 92%;
+}
+
+.title {
+    font-size: 2.2rem;
+    width: 100%;
+    padding: 20px;
+}
+
+.card {
+    max-width: 380px;
+    background-color: #ffff;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+
+}
+
+.card_header {
+    width: 100%;
+}
+
+.card_header img {
+    width: 100%;
+}
+
+.card_body {
+    min-height: 100px;
+}
+
+.card_button {
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding-left: 18px;
+    align-items: center;
+    font-size: 2.3rem;
+    color: #505050;
+}
+
+
+@media (min-width:501px) {
+
+    .list {
+        flex-direction: row !important;
+    }
+
+
+    .card {
+        margin: 10px;
+        max-width: 280px;
+        font-size: 1.2rem;
+    }
+
+
+}

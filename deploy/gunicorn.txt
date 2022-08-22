@@ -1,7 +1,7 @@
  Replace
 # spec_django to the name of the gunicorn file you want
 # nenin to your user name
-# app_repo to the folder name of your project
+# site-spec to the folder name of your project
 # meusite to the folder name where you find a file called wsgi.py
 #
 ###############################################################################
@@ -34,12 +34,12 @@ After=network.target
 User=nenin
 Group=www-data
 Restart=on-failure
-EnvironmentFile=/home/nenin/app_repo/.env
-WorkingDirectory=/home/nenin/app_repo
+EnvironmentFile=/home/nenin/site-spec/.env
+WorkingDirectory=/home/nenin/site-spec
 # --error-logfile --enable-stdio-inheritance --log-level and --capture-output
 # are all for debugging purposes.
-ExecStart=/home/nenin/app_repo/venv/bin/gunicorn \
-          --error-logfile /home/nenin/app_repo/gunicorn-error-log \
+ExecStart=/home/nenin/site-spec/venv/bin/gunicorn \
+          --error-logfile /home/nenin/site-spec/gunicorn-error-log \
           --enable-stdio-inheritance \
           --log-level "debug" \
           --capture-output \

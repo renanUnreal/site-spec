@@ -1,0 +1,58 @@
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>complete responsive coffee shop website design</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo">
+        <img src="images/logo.png" alt="">
+    </a>
+
+    <nav class="navbar">
+        <a href="#home"></a>
+        <a href="#about"></a>
+        <a href="#menu"></a>
+        <a href="#products"></a>
+        <a href="#review"></a>
+        <a href="#contact"></a>
+        <a href="{% url 'logout'%}">Logout</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+    <div class="search-form">
+        <div class="teste">
+        <form method="get" action="{% url 'busca' %}">
+        <input type="search" value="{{ request.GET.termo }}" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+        </form>
+            </div>
+    </div>
+
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<script src="{% static 'js/menu.js' %}"></script>
+
+</body>
