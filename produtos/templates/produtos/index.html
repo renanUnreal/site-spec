@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'tutulo' %}
+teste
+{% endblock %}
+
+{% block 'conteudo' %}
+<link rel="stylesheet" href="{% static 'css/list_product.css' %}">
+<div class="content_list">
+
+  <div class="title">
+    <h1>Produtos</h1>
+  </div>
+
+  <form method="get" action="{% url 'busca' %}">
+    <div class="form_pesquisa">
+      <input type="search" value="{{ request.GET.termo }}" id="search-input" placeholder="Digite sua pesquisa"
+        name="termo">
+      <label for="search-box" class="fas fa-search"></label>
+    </div>
+  </form>
+
+
+  <div class="list">
+
+    {% for produto in produtos %}
+    <div class="card">
+      <div class="card_header">
+        <a href="{% url 'ver_produto' produto.id %}">
+          <div class="card_button">
+            + Saiba mais
+          </div>
+        </a>
+        <img src="{{ produto.desc_produto }}" />
+      </div>
+      <div class="card_body">
+        <h1>{{ produto.nome }}</h1>
+        <p>Preço R${{ produto.preco }}</p>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+</div>
+
+
+<div>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      {% for pagina in produtos.paginator.page_range %}
+      {% if produtos.number == pagina %}
+      <li class="page-item active">
+        <a class="page-link" href="?p={{ pagina }}">{{ pagina }}</a>
+      </li>
+      {% else %}
+      <li class="page-item">
+        <a class="page-link" href="?p={{ pagina }}">{{ pagina }}</a>
+      </li>
+      {% endif %}
+
+      {% endfor %}
+    </ul>
+  </nav>
+</div>
+
+{% endblock %}
